@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>바이트 계산기</title>
+    <script>
+        function cal()
+        {
+            var code = Number(document.getElementById("code").value);
+            var dos1 = document.getElementById("dos1").value;
+            var dos2 = document.getElementById("dos2").value;
+            var rs;
+                if(dos1 == "Byte" && dos2 == "KB"){
+                    rs = code/1000;
+                }
+                    else if (dos1 == "Byte" && dos2 == "Byte"){
+                        rs = code;
+                    }
+                    else if (dos1 == "Byte" && dos2 == "MB"){
+                    rs = code/1000000;
+                    }
+                    else if (dos1 == "Byte" && dos2 == "GB"){
+                    rs = code/1000000000;
+                    }
+                    else if (dos1 == "Byte" && dos2 == "TB"){
+                    rs = code/1000000000000;
+                    }
+                    else if (dos1 == "KB" && dos2 == "Byte"){
+                    rs = code*1000;
+                    }
+                    else if (dos1 == "KB" && dos2 == "MB"){
+                    rs = code/1000;
+                    }
+                    else if (dos1 == "KB" && dos2 == "KB"){
+                    rs = code;
+                    }
+                    else if (dos1 == "KB" && dos2 == "GB"){
+                    rs = code/1000000;
+                    }
+                    else if (dos1 == "KB" && dos2 == "TB"){
+                    rs = code/1000000000;
+                    }
+                        else if (dos1 == "MB" && dos2 == "Byte"){
+                        rs = code*1000000;
+                        }
+                        else if (dos1 == "MB" && dos2 == "MB"){
+                        rs = code;
+                        }
+                        else if (dos1 == "MB" && dos2 == "KB"){
+                        rs = code*1000;
+                        }
+                        else if (dos1 == "MB" && dos2 == "GB"){
+                        rs = code/1000;
+                        }
+                        else if (dos1 == "MB" && dos2 == "TB"){
+                        rs = code/1000000;
+                        }
+                             else if (dos1 =="GB" && dos2 == "Byte"){
+                            rs = code*1000000000;
+                            }
+                            else if (dos1 =="GB" && dos2 == "KB"){
+                            rs = code*1000000;
+                            }
+                            else if (dos1 =="GB" && dos2 == "MB"){
+                            rs = code*1000;
+                            }
+                            else if (dos1 =="GB" && dos2 == "GB"){
+                            rs = code;
+                            }
+                            else if (dos1 =="GB" && dos2 == "TB"){
+                            rs = code/1000;
+                            }
+                                else if (dos1 =="TB" && dos2 == "Byte"){
+                                rs = code*1000000000000;
+                                }
+                                else if (dos1 =="TB" && dos2 == "KB"){
+                                rs = code*1000000000;
+                                }
+                                else if (dos1 =="TB" && dos2 == "MB"){
+                                rs = code*1000000;
+                                }
+                                else if (dos1 =="TB" && dos2 == "GB"){
+                                rs = code*1000;
+                                }
+                                else if (dos1 =="TB" && dos2 == "TB"){
+                                rs = code;
+                                }
+                    document.getElementById("rs").value = rs;
+        }
+        function reset()
+        {
+                        document.getElementById("code").value ="";
+                        document.getElementById("dos1").value ="";
+                        document.getElementById("dos2").value ="";
+                        document.getElementById("rs").value ="";
+        }
+    </script>
+</head>
+<body>
+<style>
+    body
+    {
+        background-image: url('/img/everest-4828404_1920.png');
+        background-color: aqua;
+    }
+</style>
+<h3 align="left"><a href="index.html">홈</a></h3>
+<h3 align="left"><a href="main.html">계산기</a></h3>
+<p align="center"><img src="/img/calculator-3873762_1280.png" width="300" alt=""></p>
+<h1 align="center">계산기</h1>
+<h3 align="center">단위 값은 " Byte KB MB GB TB " 만 사용 가능</h3>
+<h4 align="center">해당 계산기는 KiB 형식의 1024 단위의 바이트 계산기가 아닌 KB 형식의 1000 단위 계산기 입니다.</h4>
+    <table align="center" border="1" width="600" cellspacing="4" cellpadding="1">
+    <tr>
+        <td align="center">
+            값 :
+            <input type="text" id="code"><br>
+        </td>
+        <td align="center">
+            바이트 단위 값 :
+            <input type="text" id="dos1">
+        </td>
+        <td align="center">
+            결과 바이트 단위 값 :
+            <input type="text" id="dos2">
+        </td>
+        <td align="center">
+            결과 값 :
+            <input type="text" id="rs" >
+        </td>
+    </tr>
+</table>
+<p align="center">
+    <input type="button" value="계산 버튼" onclick="cal()">
+    <input type="button" value="리셋" onclick="reset()">
+</p>
+</body>
+</html>

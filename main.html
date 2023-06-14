@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기</title>
+    <script>
+        function cal()
+        {
+            var code1 = Number(document.getElementById("code1").value);
+            var code2 = Number(document.getElementById("code2").value);
+            var dos = document.getElementById("dos").value;
+            var rs;
+                if(dos == "+"){
+                    rs = code1+code2;
+                }
+                else if (dos =="*"){
+                    rs = code1*code2;
+                }
+                else if (dos =="-"){
+                    rs = code1-code2;
+                }
+                else if (dos =="/"){
+                    rs = code1/code2;
+                }
+                    document.getElementById("rs").value = rs;
+        }
+        function reset()
+        {
+                        document.getElementById("code1").value ="";
+                        document.getElementById("code2").value ="";
+                        document.getElementById("dos").value ="";
+                        document.getElementById("rs").value ="";
+        }
+    </script>
+</head>
+<body>
+<style>
+    body
+    {
+        background-image: url('/img/forest-7774205.jpg');
+        background-color: aqua;
+    }
+</style>
+<h3 align="left"><a href="index.html">홈</a></h3>
+<h3 align="left"><a href="byte.html">바이트 계산기</a></h3>
+<p align="center"><img src="/img/calculator-g2df2c5ae3_1280.png" width="400" alt=""></p>
+
+<h1 align="center">계산기</h1>
+<h3 align="center">! 중요함 ! 연산 기호는 " + - * / " 만 사용 가능</h3>
+    <table align="center" border="1" width="600" cellspacing="4" cellpadding="1">
+    <tr>
+        <td align="center">
+            계산 값 1 :
+            <input type="text" id="code1"><br>
+        </td>
+        <td align="center">
+            연산 기호 :
+            <input type="text" id="dos">
+        <td align="center">
+            계산 값 2 :
+            <input type="text" id="code2"><br>
+        </td>
+        <td align="center">
+            결과 값 :
+            <input type="text" id="rs" >
+        </td>
+    </tr>
+</table>
+<p align="center">
+    <input type="button" value="계산 버튼" onclick="cal()">
+    <input type="button" value="리셋" onclick="reset()">
+</p>
+</body>
+</html>
